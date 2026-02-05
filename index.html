@@ -183,7 +183,7 @@
             </p>
 
             <div class="contact-details">
-              <a href="" class="contact-link">
+              <a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtXMmZMhclfxPCvPPzgWTQFtStppHQSgSvRqvcTkwSKgGckJZtFXMlQZVsthcBdGjkZxvb" target="_blank" class="contact-link">
                 <svg
                   width="20"
                   height="20"
@@ -245,7 +245,7 @@
             </div>
           </div>
 
-          <form class="contact-form">
+          <!-- <form class="contact-form">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required />
@@ -264,7 +264,7 @@
               ></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+          </form> -->
 
         </div>
       </div>
@@ -274,7 +274,22 @@
     <footer class="footer">
       <div class="container">
         <p>&copy; 2026 Purnima Gupta. All rights reserved.</p>
+        <p>Visitors: <span id="count">0</span></p>
       </div>
+      
     </footer>
+
+<script>
+if (!sessionStorage.getItem("visited")) {
+  let count = localStorage.getItem("visitorCount") || 0;
+  count++;
+  localStorage.setItem("visitorCount", count);
+  sessionStorage.setItem("visited", true);
+}
+
+document.getElementById("count").innerText =
+  localStorage.getItem("visitorCount");
+</script>
+
   </body>
 </html>
